@@ -1,7 +1,5 @@
 #include <stdio.h> // Nur für printf
 
-// --- Unveränderte Hilfsfunktionen ---
-
 // Eigene strlen-Funktion (da string.h nicht erlaubt ist)
 size_t my_strlen(const char *str) {
     size_t len = 0;
@@ -27,14 +25,12 @@ unsigned char get_random_byte() {
     return (unsigned char)(lcg_state & 0xFF);
 }
 
-// --- Neue Hilfsfunktion zur Visualisierung ---
-
 /**
  * @brief Gibt ein einzelnes Byte (char) als 8-stellige Binärzahl auf der Konsole aus.
  * z.B. 'A' (65) -> "01000001"
  * @param byte Das Byte, das gedruckt werden soll.
  */
-void print_byte_as_binary(unsigned char byte) {
+void print_byte_as_binary(unsigned char byte) {     // 1 ASCII Charakter -> 1 Byte -> 8 Bit
     // Wir iterieren von Bit 7 (MSB) herunter zu Bit 0 (LSB)
     for (int i = 7; i >= 0; i--) {
         // Wir verschieben das i-te Bit an die 0-te Stelle...
